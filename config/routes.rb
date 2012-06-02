@@ -1,8 +1,8 @@
 Debutante::Application.routes.draw do
+  match 'auth/:provider/callback', to: 'sessions#create'  
+  match 'auth/failure', to: 'sessions#create'
   get "sessions/create"
-
   get "sessions/fail"
-
   get "sessions/index"
 
   # The priority is based upon order of creation:
