@@ -1,4 +1,10 @@
 Debutante::Application.routes.draw do
+  get "sessions/create"
+
+  get "sessions/fail"
+
+  get "sessions/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
