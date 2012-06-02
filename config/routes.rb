@@ -1,4 +1,5 @@
 Debutante::Application.routes.draw do
+  root to: 'sessions#index'
   match 'auth/:provider/callback', to: 'sessions#create'  
   match 'auth/failure', to: 'sessions#create'
   get "sessions/create"
