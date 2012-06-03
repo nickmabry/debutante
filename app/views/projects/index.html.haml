@@ -5,10 +5,11 @@
     - if @projects.empty?
       %p No projects have been submitted this week.
     - else
-      %ul
+      %ul.project-list
         - @projects.each do |project|
           %li
-            = project.title
-            = link_to "Vote for Me!", "/projects/#{project.id}/vote", class: "btn btn-primary btn-small"
-            %ul
-              %li= project.short_description
+            .project-row
+              .vote-count= project.votes
+              = link_to "Vote", "/projects/#{project.id}/vote", class: "btn btn-primary btn-small"
+              .project-title= project.title
+            %p= project.short_description
