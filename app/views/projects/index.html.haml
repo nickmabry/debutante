@@ -5,4 +5,9 @@
 - else
   %ul
     - @projects.each do |project|
-      %li= project.title
+      %li
+        = project.title
+        %ul
+          %li= project.short_description
+        
+      
