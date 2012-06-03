@@ -18,7 +18,10 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(title: params[:title], url: params[:url], description: params[:project][:description], short_description: params[:project][:description].slice(0..140))
     @project.user = current_user
-    @project.save
-    redirect_to action: :index
+    if !@project.save
+      redirect_to({action: :index}, alert: "You have already submitted a project this round. Feel free to submit this one next week!")
+    else
+      redirect_to action: :index
+    end
   end
 end
