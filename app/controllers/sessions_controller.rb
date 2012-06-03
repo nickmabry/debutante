@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def new
-    redirect_to '/auth/twitter'
+    redirect_to '/auth/github'
   end
 
   def destroy

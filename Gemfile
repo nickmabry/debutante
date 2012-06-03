@@ -29,7 +29,7 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'omniauth-github'
-
+gem 'octokit'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

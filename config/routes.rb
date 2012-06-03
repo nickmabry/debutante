@@ -1,12 +1,10 @@
 Debutante::Application.routes.draw do
-  get "home/index"
-
   root to: 'home#index'
   match '/auth/:provider/callback', to: 'sessions#create'  
   match '/auth/failure', to: 'sessions#failure'
   match '/signout', to: 'sessions#destroy', as: :signout
   match '/signin', to: 'sessions#new', as: :signin
-
+  resources :projects, only: [:index, :new]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
