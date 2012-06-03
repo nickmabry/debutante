@@ -4,7 +4,8 @@ Debutante::Application.routes.draw do
   match '/auth/failure', to: 'sessions#failure'
   match '/signout', to: 'sessions#destroy', as: :signout
   match '/signin', to: 'sessions#new', as: :signin
-  resources :projects, only: [:index, :new]
+  resources :projects, only: [:index, :new, :create]
+  match '/projects/available_projects', to: 'projects#available_projects', as: :available_projects
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

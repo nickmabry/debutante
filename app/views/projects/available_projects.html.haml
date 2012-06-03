@@ -1,0 +1,6 @@
+%h1 Submit a project
+%h2 Your projects:
+%ul
+  - @github_projects.each do |project|
+    %li= link_to project.name, new_project_path(project_name: project.name, project_url: project.url)
+
