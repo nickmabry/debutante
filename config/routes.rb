@@ -6,6 +6,7 @@ Debutante::Application.routes.draw do
   match '/signin', to: 'sessions#new', as: :signin
   resources :projects, only: [:index, :new, :create]
   match '/projects/available_projects', to: 'projects#available_projects', as: :available_projects
+  match '/projects/:id/vote', to: 'projects#vote'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

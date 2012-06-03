@@ -24,4 +24,19 @@ class ProjectsController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  def vote
+    if current_user.has_voted
+      redirect_to({action: :index}, alert: "You have already voted this round. Feel free to vote again next week!")
+    else
+      Project.transaction do
+        @project = Project.find(params[:id])
+        @project.votes += 1
+        current_user.has_voted = true
+        @project.save
+        current_user.save
+      end
+      redirect_to action: :index
+    end
+  end
 end
