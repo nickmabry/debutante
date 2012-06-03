@@ -1,14 +1,14 @@
-%h1 Project List
-= link_to("Submit a project", available_projects_path)
-- if @projects.empty?
-  %p No projects have been submitted this week.
-- else
-  %ul
-    - @projects.each do |project|
-      %li
-        = project.title
-        = link_to "Vote for Me!", "/projects/#{project.id}/vote", class: "btn btn-primary btn-small"
-        %ul
-          %li= project.short_description
-        
-      
+.row
+  .span12
+    %h1 Project List
+    = link_to("Submit a project", available_projects_path)
+    - if @projects.empty?
+      %p No projects have been submitted this week.
+    - else
+      %ul
+        - @projects.each do |project|
+          %li
+            = project.title
+            = link_to "Vote for Me!", "/projects/#{project.id}/vote", class: "btn btn-primary btn-small"
+            %ul
+              %li= project.short_description

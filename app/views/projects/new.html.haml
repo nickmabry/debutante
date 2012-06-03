@@ -1,10 +1,6 @@
 %h1 Submit Project
-%p
-  Name: 
-  = @project.title
-%p
-  URL: 
-  = link_to @project.url, @project.url
+%h3= @project.title
+= link_to @project.url, @project.url
 = form_for @project, url: { action: "create" } do |f|
   = hidden_field_tag 'title', @project.title
   = hidden_field_tag 'url', @project.url

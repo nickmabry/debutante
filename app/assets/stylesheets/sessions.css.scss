@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'bootstrap';
-@import 'bootstrap-responsive';
+//@import 'bootstrap-responsive';
 
+.navbar-inner {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
 
